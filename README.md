@@ -1,23 +1,21 @@
 # Description
-This repo is forked from odarriba/docker-timemachine.
-It is only used for my home environment.
+Forked from axot/docker-timemachine for private use
 
 # Example Docker Compose config
-I set a low mem_limit value because linux file cache.
 
 ```
 timemachine:
-  build: timemachine
+  build: docker-timemachine
   net: host
   volumes:
-    - /mnt/storage:/storage
-    - /mnt/timemachine:/timemachine
+    - /pool1/storage:/storage
+    - /pool1/timemachine:/timemachine
   ports:
     - "548:548"
     - "636:636"
   mem_limit: 10m
   memswap_limit: -1
-  restart: always  
+  restart: always
   stdin_open: true
 ```
 
